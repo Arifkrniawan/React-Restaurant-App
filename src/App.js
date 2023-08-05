@@ -1,21 +1,46 @@
-import Homepage from "./Homepage";
-import Aboutme from "./Aboutme";
-import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
+import {
+  Route, 
+  Routes
+} from 'react-router-dom';
+import pages from './utils/pages';
+import Layout from './component/layout/Layout';
+import Home from './component/pages/Home';
+import Bookings from './component/pages/Bookings';
+import ConfirmedBooking from './component/pages/Bookings/ConfirmedBooking';
+import Loading from './component/pages/Loading';
 
-function App() {
+
+const App = () => {
   return (
-   <div>
-    <nav>
-      <Link to="/" className="nav-item">Homepage</Link>
-      <Link to="/about" className="nav-item">About Little Lemon</Link>
-    </nav>
-      <Routes>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route path="/about" element={<Aboutme />}></Route>
-      </Routes>
-   </div>
+    <>
+      <Layout>
+        <Routes>
+          <Route path={pages.get('home').path} element={<Home />} />
+          <Route 
+            path={pages.get('about').path} 
+            element={<Loading />} 
+          />
+          <Route 
+            path={pages.get('menu').path} 
+            element={<Loading />} 
+          />
+          <Route path={pages.get('bookings').path} element={<Bookings />} />
+          <Route 
+            path={pages.get('confirmedBooking').path} 
+            element={<ConfirmedBooking />} 
+          />
+          <Route 
+            path={pages.get('orderOnline').path} 
+            element={<Loading />} 
+          />
+          <Route 
+            path={pages.get('login').path} 
+            element={<Loading />} 
+          />
+        </Routes>
+      </Layout>
+    </>
   );
-}
+};
 
 export default App;

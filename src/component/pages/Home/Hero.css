@@ -1,0 +1,68 @@
+.hero {
+    padding-top: 1.8725rem;
+    background-color: #495E57;
+}
+
+.hero .container {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 9.375rem;
+    gap: 3.5rem;
+}
+
+.hero-information {
+    grid-column: 1;
+}
+
+.hero-information h1 {
+    color: #f4ce14;
+}
+
+.hero-information h2 {
+    margin-top: 1rem;
+}
+
+.hero-information h2 {
+    color: #FFFFFF;
+}
+
+.hero-information p {
+    margin-top: 1.5em;
+    color: #FFFFFF;
+}
+
+.hero-image {
+    grid-column: 2;
+    width: 100%;
+    height: 24rem;
+    margin-bottom: -4.375rem;
+    justify-self: end;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.hero-information .button-primary {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.hero-information .button-primary:hover,
+.hero-information .button-primary:focus {
+    border-color: #F4CE14;
+}
+
+
+@media (max-width: 792px) {
+    .hero .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+    
+    .hero-information {
+      grid-row: 1;
+    }
+    
+    .hero-image {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    }
